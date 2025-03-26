@@ -1,27 +1,7 @@
 import { write, type IntTag, type ListTag, Int32 } from "nbtify"
 import { gzip } from "zlib"
-export type BlockState = {
-  Name: string;
-  Properties?: Record<string, string>;
-}
+import { ColorMap, type BlockState } from './colorMap';
 
-export type BlockMapping = {
-  blockState: BlockState;
-}
-
-// Example color map with basic blocks
-const ColorMap: Record<string, BlockMapping> = {
-  "#000000": { 
-    blockState: { 
-      Name: "minecraft:black_concrete"
-    }
-  },
-  "#FFFFFF": { 
-    blockState: { 
-      Name: "minecraft:white_concrete"
-    }
-  }
-}
 
 /**
  * Converts a 2D array of pixel colors into a 2D array of block states using the provided color map.

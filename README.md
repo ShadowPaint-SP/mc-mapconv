@@ -1,29 +1,87 @@
-# Create T3 App
+# Minecraft Map Converter
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+A web application that converts PNG images into Minecraft .litematic files by scaling down the image and mapping colors to Minecraft blocks.
 
-## What's next? How do I make an app with this?
+## How It Works
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+1. Upload a PNG image file
+2. The application processes the image by compressing 8×8 pixel blocks into a single block
+3. For each block, the average color is calculated and mapped to the closest Minecraft block color
+4. A .litematic file is generated that you can import into Minecraft using the Litematica mod
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Technologies Used
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- Next.js (React framework)
+- TypeScript
+- TailwindCSS for styling
 
-## Learn More
+## Features
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Client-side processing (no server upload required)
+- Automatic color mapping to Minecraft blocks
+- Preview of uploaded images
+- Download .litematic files for use with the Litematica mod
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Development
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+### Prerequisites
 
-## How do I deploy this?
+- Node.js 18+ and pnpm
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/mc-mapconv.git
+cd mc-mapconv
+
+# Install dependencies
+pnpm install
+
+# Start the development server
+pnpm dev
+```
+
+### Building for Production
+
+```bash
+# Build the app
+pnpm build
+
+# Run the production build locally
+pnpm start
+```
+
+## Limitations and Future Improvements
+
+- This is a simplified implementation of the .litematic format and may not be fully compatible with all versions of the Litematica mod
+- The color mapping is basic and could be improved with a more comprehensive database of Minecraft block colors
+- Currently only supports basic block types (concrete blocks)
+- Future improvements could include:
+  - Support for more block types
+  - Custom block mappings
+  - Dithering options for better color representation
+  - 3D structure support (instead of flat maps)
+
+## License
+
+MIT
+
+## Acknowledgements
+
+- This app is meant for educational purposes
+- Minecraft is a registered trademark of Mojang Studios
+- Litematica mod by masady
+
+
+
+
+## Ideas
+
+- [ ] image compressor
+  - [ ] format changer
+- [ ] video compressor?
+  - [ ] format changer?
+- [ ] image to litematic
+  - [ ] select block pallet
+- [ ] pdf compression

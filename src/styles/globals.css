@@ -1,3 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 280 100% 70%; /* Changed to #cc66ff */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 70% 96%;
+    --secondary-foreground: 280 60% 30%;
+    --muted: 280 30% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 280 70% 96%;
+    --accent-foreground: 280 60% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 280 100% 70%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 280 100% 70%; /* Changed to #cc66ff */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 30% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 280 30% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 280 30% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 280 30% 17.5%;
+    --input: 280 30% 17.5%;
+    --ring: 280 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .noise-gradient {
+    background: linear-gradient(
+      to bottom right,
+      hsl(var(--primary) / 0.15),
+      hsl(var(--background)),
+      hsl(var(--secondary) / 0.2)
+    );
+    position: relative;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass {
+    background: rgba(17, 24, 39, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+

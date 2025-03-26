@@ -1,37 +1,78 @@
-import Link from "next/link";
+import Link from "next/link"
+import { ArrowRight, FileDown, Gauge, ImageIcon } from "lucide-react"
 
-export default function HomePage() {
+import { Button } from "../components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
+
+export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
+    <div className="relative z-10">
+      <section className="py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center text-center space-y-4 mb-12">
+            <div className="p-3 rounded-full bg-primary/10 text-primary">
+              <ImageIcon className="h-10 w-10" />
             </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tighter">Simple Image Compression</h1>
+            <p className="text-xl text-muted-foreground max-w-[700px]">
+              Reduce your image file sizes without losing quality. Fast, free, and secure.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <Button asChild size="lg">
+                <Link href="/compress">
+                  Start Compressing
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
-          </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <Card>
+              <CardHeader>
+                <Gauge className="h-6 w-6 mb-2 text-primary" />
+                <CardTitle>Efficient Compression</CardTitle>
+                <CardDescription>Compress images with a customizable ratio from 1:1 to 20:1</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Our algorithm intelligently reduces file size while maintaining visual quality. You control the
+                  compression ratio to balance size and quality.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <FileDown className="h-6 w-6 mb-2 text-primary" />
+                <CardTitle>Simple Workflow</CardTitle>
+                <CardDescription>Upload, compress, and download in seconds</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  No complicated settings or technical knowledge required. Just upload your image, adjust the
+                  compression ratio, and download the result.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <ImageIcon className="h-6 w-6 mb-2 text-primary" />
+                <CardTitle>Browser-Based</CardTitle>
+                <CardDescription>No software to install, works on any device</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Your images never leave your device. All compression happens locally in your browser, ensuring your
+                  privacy and security.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
-    </main>
-  );
+      </section>
+    </div>
+  )
 }
+

@@ -18,6 +18,7 @@ export default function Navbar() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/compress", label: "Compress" },
+    { href: "/convert", label: "Convert" },
   ]
 
   return (

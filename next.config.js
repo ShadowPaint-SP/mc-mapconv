@@ -10,7 +10,11 @@ const config = {
 	images: {
 		unoptimized: true,
 	},
+	trailingSlash: true,
+
+	// Use relative paths for assets
+	basePath: '',
+	assetPrefix: './',
 };
 
-//module.exports = config;
 export default config;

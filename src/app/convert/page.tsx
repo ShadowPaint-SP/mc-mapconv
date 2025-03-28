@@ -10,7 +10,7 @@ import { Card, CardContent } from "~/components/ui/card"
 import { 
   convertImageToBlocks, 
   createStructureFromBlocks
-} from "~/lib/utils/structureConverter"
+} from "~/lib/structureConverter"
 
 
 export default function ConvertPage() {

@@ -1,6 +1,6 @@
 # Minecraft Map Converter
 
-A web application that converts PNG images into Minecraft .litematic files by scaling down the image and mapping colors to Minecraft blocks.
+A web application that converts PNG images into Minecraft .nbt files by scaling down the image and mapping colors to Minecraft blocks.
 
 ## How It Works
 
@@ -11,7 +11,7 @@ A web application that converts PNG images into Minecraft .litematic files by sc
 
 ## Technologies Used
 
-- Next.js (React framework)
+- Next.js
 - TypeScript
 - TailwindCSS for styling
 
@@ -21,36 +21,6 @@ A web application that converts PNG images into Minecraft .litematic files by sc
 - Automatic color mapping to Minecraft blocks
 - Preview of uploaded images
 - Download .litematic files for use with the Litematica mod
-
-## Development
-
-### Prerequisites
-
-- Node.js 18+ and pnpm
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/mc-mapconv.git
-cd mc-mapconv
-
-# Install dependencies
-pnpm install
-
-# Start the development server
-pnpm dev
-```
-
-### Building for Production
-
-```bash
-# Build the app
-pnpm build
-
-# Run the production build locally
-pnpm start
-```
 
 ## Limitations and Future Improvements
 
@@ -63,17 +33,17 @@ pnpm start
   - Dithering options for better color representation
   - 3D structure support (instead of flat maps)
 
-## License
-
-MIT
-
 ## Acknowledgements
 
 - This app is meant for educational purposes
 - Minecraft is a registered trademark of Mojang Studios
 - Litematica mod by masady
 
+## Reference
 
+- [Structure File Format](https://minecraft.wiki/w/Structure_file)
+- [NBT node package used](https://github.com/Offroaders123/NBTify)
+- [NBT viewer](https://irath96.github.io/webNBT/)
 
 
 ## Ideas

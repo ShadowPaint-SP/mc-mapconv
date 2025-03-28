@@ -5,47 +5,47 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 280 100% 70%; /* Changed to #cc66ff */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 280 70% 96%;
-    --secondary-foreground: 280 60% 30%;
-    --muted: 280 30% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 280 70% 96%;
-    --accent-foreground: 280 60% 30%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 52 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 280 100% 70%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 52 100% 50%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 280 100% 70%; /* Changed to #cc66ff */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 280 30% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 280 30% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 280 30% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 52 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 280 30% 17.5%;
-    --input: 280 30% 17.5%;
-    --ring: 280 100% 70%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 52 100% 50%;
   }
 }
 
@@ -62,23 +62,66 @@
   .noise-gradient {
     background: linear-gradient(
       to bottom right,
-      hsl(var(--primary) / 0.15),
+      hsl(var(--primary) / 0.05),
       hsl(var(--background)),
-      hsl(var(--secondary) / 0.2)
+      hsl(var(--secondary) / 0.1)
     );
     position: relative;
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .dark .glass {
     background: rgba(17, 24, 39, 0.75);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 15px 2px rgba(255, 221, 0, 0.3);
+  }
+
+  .glow-yellow:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 221, 0, 0.4);
+  }
+
+  .glow-card {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .dark .glow-card {
+    box-shadow: 0 0 20px 0px rgba(30, 30, 30, 0.5);
+  }
+
+  .glow-card:hover {
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.15), 0 0 5px 2px rgba(255, 221, 0, 0.2);
+    transform: translateY(-3px);
+  }
+
+  .dark .glow-card:hover {
+    box-shadow: 0 0 25px 5px rgba(50, 50, 50, 0.6), 0 0 5px 2px rgba(255, 221, 0, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 15px 2px rgba(255, 221, 0, 0.1);
+  }
+
+  .dark .glow-primary {
+    box-shadow: 0 0 15px 2px rgba(255, 221, 0, 0.2);
+  }
+
+  .glow-primary:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 221, 0, 0.2);
+  }
+
+  .dark .glow-primary:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 221, 0, 0.3);
   }
 }
 

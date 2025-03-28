@@ -98,13 +98,13 @@ export default function ConvertPage() {
     <div className="container max-w-2xl mx-auto py-8 px-4 relative z-10">
       <h1 className="text-3xl font-bold text-center mb-8">Image to Structure Converter</h1>
 
-      <Card>
+      <Card className="bg-white border-gray-200 dark:bg-zinc-900 dark:border-zinc-800 glow-card">
         <CardContent className="pt-6">
           <h2 className="text-xl font-semibold mb-4">Convert Image to Minecraft Structure</h2>
 
           <div className="flex flex-col gap-6">
             {/* Image Preview */}
-            <div className="flex justify-center items-center border-2 border-dashed border-gray-300 rounded-lg h-64 relative overflow-hidden">
+            <div className="flex justify-center items-center border-2 border-dashed border-gray-300 dark:border-zinc-700 rounded-lg h-64 relative overflow-hidden">
               {originalImage ? (
                 <div className="w-full h-full relative">
                   <Image
@@ -116,8 +116,8 @@ export default function ConvertPage() {
                 </div>
               ) : (
                 <div className="text-center p-4">
-                  <ImageIcon className="mx-auto h-12 w-12 text-gray-400" />
-                  <p className="mt-2 text-sm text-gray-500">No image selected</p>
+                  <ImageIcon className="mx-auto h-12 w-12 text-gray-400 dark:text-zinc-600" />
+                  <p className="mt-2 text-sm text-gray-500 dark:text-zinc-500">No image selected</p>
                 </div>
               )}
             </div>
@@ -131,7 +131,7 @@ export default function ConvertPage() {
                   <p><strong>Type:</strong> {originalImage.type}</p>
                 </>
               ) : (
-                <p className="text-muted-foreground">No image selected</p>
+                <p className="text-gray-500 dark:text-zinc-500">No image selected</p>
               )}
             </div>
 
@@ -144,7 +144,7 @@ export default function ConvertPage() {
             {/* Upload Button */}
             <Button
               variant="outline"
-              className="w-full"
+              className="w-full border-gray-300 hover:bg-gray-100 dark:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-white"
               onClick={() => document.getElementById("file-upload")?.click()}
             >
               <Upload className="mr-2 h-4 w-4" />
@@ -161,7 +161,7 @@ export default function ConvertPage() {
             {/* Action Buttons */}
             <div className="grid grid-cols-2 gap-4">
               <Button
-                className="w-full"
+                className="w-full bg-brand-yellow text-black hover:bg-brand-yellow/90 glow-yellow"
                 disabled={!originalImage || isConverting}
                 onClick={handleConvert}
               >
@@ -169,7 +169,7 @@ export default function ConvertPage() {
               </Button>
 
               <Button
-                className="w-full"
+                className="w-full bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700 glow-primary"
                 variant="secondary"
                 disabled={!structureData || isConverting}
                 onClick={handleDownload}

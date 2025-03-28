@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className="noise-gradient min-h-screen flex flex-col">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
           </div>

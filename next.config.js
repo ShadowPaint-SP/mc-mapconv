@@ -11,10 +11,6 @@ const config = {
 		unoptimized: true,
 	},
 	trailingSlash: true,
-
-	// Use relative paths for assets
-	basePath: '',
-	assetPrefix: './',
 };
 
 export default config;

@@ -6,9 +6,11 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
-	basePath: "/mc-mapconv",  // Must match the repo name for GitHub Pages
-	assetPrefix: "/mc-mapconv/",  // Ensures correct asset paths
-	trailingSlash: true,  // Ensures all routes work correctly
+	output: 'export',
+	images: {
+		unoptimized: true,
+	},
 };
 
+//module.exports = config;
 export default config;
